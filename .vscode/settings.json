@@ -1,0 +1,10 @@
+{
+  "prettier.bracketSpacing": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "prettier.disableLanguages": ["markdown"]
+}
