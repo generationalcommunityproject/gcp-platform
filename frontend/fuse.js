@@ -76,7 +76,7 @@ task('default', ['clean'], async context => {
   await fuse.run()
 })
 
-task('public', ['clean'], async context => {
+task('build', ['clean'], async context => {
   context.isProduction = true
   const fuse = context.getConfig()
   context.createBundle(fuse)

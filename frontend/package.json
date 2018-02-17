@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "node fuse.js",
-    "build": "node fuse.js dist",
+    "build": "node fuse.js build",
     "clean": "node fuse.js clean"
   },
   "dependencies": {
