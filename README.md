@@ -90,10 +90,22 @@ Mission Statement:  The Generational Community Project engages the community’s
 
 ### Social
 
-- Facebook
+- [Facebook](https://www.facebook.com/GenCommProj)
 - [Twitter](https://twitter.com/GenCommProj)
 
 ### Branding
 
 - Tagline: TODO
 - Logo: TODO
+
+## Contributing
+
+### Install & Run
+
+```
+  git clone git@github.com:generationalcommunityproject/gcp-platform.git
+  cd gcp-platform
+  yarn install
+  yarn dev
+  open http://localhost:8080
+```

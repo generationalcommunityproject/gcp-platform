@@ -5,11 +5,26 @@ import * as Actions from '../actions'
 import * as Types from '../types'
 import Store from '../store'
 
+import {Input} from './Input'
+
 interface Props {}
 
-interface State {}
+interface State {
+  username: string
+  password: string
+}
 
 export class Login extends React.Component<Props, State> {
+  public state = {username: '', password: ''}
+
+  private onFieldValueChange = (fieldName: string, value: string) => {
+    this.setState({...this.state, [fieldName]: value})
+  }
+
+  private onLogin = (evt: React.FormEvent<HTMLFormElement>) => {
+    evt.preventDefault()
+  }
+
   private selectUser = (role: Types.Role) => () => {
     Store.dispatch(Actions.routeLogin(role))
   }
@@ -28,6 +43,24 @@ export class Login extends React.Component<Props, State> {
         <button onClick={this.selectUser(Types.Role.responsibleParty)}>
           Responsible Party
         </button>
+        <form onSubmit={this.onLogin}>
+          <Input
+            name="username"
+            label="username"
+            value={this.state.username}
+            onChange={this.onFieldValueChange}
+          />
+
+          <Input
+            type="password"
+            name="password"
+            label="password"
+            value={this.state.password}
+            onChange={this.onFieldValueChange}
+          />
+
+          <input type="submit" value="Login" />
+        </form>
       </div>
     )
   }
