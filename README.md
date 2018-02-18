@@ -95,8 +95,10 @@ Mission Statement:  The Generational Community Project engages the community’s
 
 ### Branding
 
-- Tagline: TODO
-- Logo: TODO
+- Tagline: Engaging communities to help social and ecological issues by organizing solutions that will last for generations
+- Logo:
+
+![Generational Community Project Logo](https://firebasestorage.googleapis.com/v0/b/generational-community-project.appspot.com/o/home.jpg?alt=media&token=8ed3ef64-3bd1-432b-86ab-d3201f75e6a9)
 
 ## Contributing
 

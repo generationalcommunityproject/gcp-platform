@@ -6,8 +6,12 @@ import * as Constants from './constants'
 import * as Styles from './styles'
 
 export const Home: React.SFC<{}> = ({}) => (
-  <div>
+  <div className={Styles.flexColumn}>
     <h2>Home</h2>
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/generational-community-project.appspot.com/o/home.jpg?alt=media&token=8ed3ef64-3bd1-432b-86ab-d3201f75e6a9"
+      className={Styles.fullWidth}
+    />
   </div>
 )
 

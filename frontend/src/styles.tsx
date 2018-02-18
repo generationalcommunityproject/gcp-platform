@@ -32,6 +32,11 @@ export const flexCenter = cssstr({
   alignItems: 'center',
 })
 
+export const fullWidth = cssstr({
+  position: 'relative',
+  width: '100%',
+})
+
 export const formGroup = cssstr({
   border: '1px solid #fff',
   padding: '5px',
