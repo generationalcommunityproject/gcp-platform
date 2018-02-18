@@ -5,6 +5,7 @@ import {Provider as StateProvider, connect} from 'react-redux'
 
 import * as Types from './types'
 import * as Styles from './styles'
+import * as Constants from './constants'
 import Store from './store'
 
 import {Nav, Home, NotFound} from './components'
@@ -46,13 +47,15 @@ const AppContainer: React.SFC<Types.AppState> = ({
 }) => (
   <div className={Styles.flexColumn}>
     <Nav />
-    {route === Types.Routes.HOME && <Home />}
-    {route === Types.Routes.LOGIN && <Login />}
-    {route === Types.Routes.REGISTER && <Register />}
-    {route === Types.Routes.PROFILE && <Profile profile={profile} />}
-    {route === Types.Routes.COMMUNITIES && <Communities communities={communities} />}
-    {route === Types.Routes.ISSUES && <Issues issues={issues} />}
-    {route === Types.Routes.NOTFOUND && <NotFound />}
+    {route === Constants.Routes.HOME && <Home />}
+    {route === Constants.Routes.LOGIN && <Login />}
+    {route === Constants.Routes.REGISTER && <Register />}
+    {route === Constants.Routes.PROFILE && <Profile profile={profile} />}
+    {route === Constants.Routes.COMMUNITIES && (
+      <Communities communities={communities} />
+    )}
+    {route === Constants.Routes.ISSUES && <Issues issues={issues} />}
+    {route === Constants.Routes.NOTFOUND && <NotFound />}
   </div>
 )
 

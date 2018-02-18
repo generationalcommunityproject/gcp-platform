@@ -1,33 +1,24 @@
-export enum Routes {
-  HOME = 'HOME',
-  COMMUNITIES = 'COMMUNITIES',
-  ISSUES = 'ISSUES',
-  PROFILE = 'PROFILE',
-  REGISTER = 'REGISTER',
-  LOGIN = 'LOGIN',
-  NOTFOUND = '@@redux-first-router/NOT_FOUND',
-}
+import * as Constants from './constants'
 
-export type Route = Routes | null
+export type Route = Constants.Routes | null
 
 export interface RoutesMap {
   [key: string]: string
 }
 
-export enum Actions {
-  USER_PROFILE = 'USER_PROFILE',
-  USER_LOGIN = 'USER_LOGIN',
-  LOGOUT = 'LOGOUT',
-}
-
-export enum Role {
-  communityAdvocate = 'communityAdvocate',
-  solutionProvider = 'solutionProvider',
-  responsibleParty = 'responsibleParty',
+export interface Error {
+  type: string
+  code: number
+  message: string
 }
 
 export type Address = string
 export type ID = string
+
+export interface UserLogin {
+  username: string
+  password: string
+}
 
 export interface Profile {
   initialized: boolean
@@ -35,7 +26,7 @@ export interface Profile {
   address?: Address
   username: string
   community: string
-  role: Role
+  role: Constants.Role
 }
 
 export interface Advocate {
@@ -56,7 +47,7 @@ export interface Issue {
 }
 
 export interface AppState {
-  route: Routes
+  route: Constants.Routes
   profile: Profile
   communities: Community[]
   issues: Issue[]

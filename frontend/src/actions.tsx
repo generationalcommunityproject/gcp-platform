@@ -2,21 +2,56 @@ import actionCreatorFactory from 'typescript-fsa'
 import {NOT_FOUND} from 'redux-first-router'
 
 import * as Types from './types'
+import * as Constants from './constants'
+import * as Utils from './utils'
 
 const actionCreator = actionCreatorFactory()
 
 // Route actions
-export const routeHome = actionCreator<{}>(Types.Routes.HOME)
-export const routeCommunities = actionCreator<{}>(Types.Routes.COMMUNITIES)
-export const routeIssues = actionCreator<{}>(Types.Routes.ISSUES)
-export const routeProfile = actionCreator<{}>(Types.Routes.PROFILE)
-export const routeRegister = actionCreator<{}>(Types.Routes.REGISTER)
-export const routeLogin = actionCreator<{}>(Types.Routes.LOGIN)
+export const routeHome = actionCreator<{}>(Constants.Routes.HOME)
+export const routeCommunities = actionCreator<{}>(Constants.Routes.COMMUNITIES)
+export const routeIssues = actionCreator<{}>(Constants.Routes.ISSUES)
+export const routeProfile = actionCreator<{}>(Constants.Routes.PROFILE)
+export const routeRegister = actionCreator<{}>(Constants.Routes.REGISTER)
+export const routeLogin = actionCreator<{}>(Constants.Routes.LOGIN)
 export const routeNotFound = actionCreator<{}>(NOT_FOUND)
 
 // User actions
 export const userProfile = actionCreator<Types.Profile>(
-  Types.Actions.USER_PROFILE
+  Constants.Actions.USER_PROFILE
 )
-export const userLogin = actionCreator<Types.Role>(Types.Actions.USER_LOGIN)
-export const userLogout = actionCreator<{}>(Types.Actions.LOGOUT)
+export const userLogin = actionCreator<Constants.Role>(
+  Constants.Actions.USER_LOGIN
+)
+export const userLogout = actionCreator<{}>(Constants.Actions.LOGOUT)
+
+export const userRegistrationSuccess = actionCreator<Types.Profile>(
+  Constants.Actions.USER_REGISTRATION_SUCCESS
+)
+export const userRegistrationFailure = actionCreator<Types.Error>(
+  Constants.Actions.USER_REGISTRATION_FAILURE
+)
+export const userRegistrationStarted = (
+  registration: Types.UserLogin
+) => async (dispatch): Promise<void> => {
+  let res: Response
+  try {
+    res = await fetch(Constants.Endpoint.Register, {
+      method: Constants.HTTPMethod.POST,
+      body: JSON.stringify(registration),
+    })
+    const data: Types.Profile = await res.json()
+    dispatch(userRegistrationSuccess(data))
+  } catch (error) {
+    console.error(error)
+    dispatch(
+      userRegistrationFailure(
+        Utils.newError({
+          code: res.status,
+          type: Constants.Actions.USER_REGISTRATION_FAILURE,
+          message: error,
+        })
+      )
+    )
+  }
+}

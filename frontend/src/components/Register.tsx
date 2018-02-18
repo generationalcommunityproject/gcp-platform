@@ -1,15 +1,15 @@
 import * as React from 'react'
 
 import * as Styles from '../styles'
+import * as Actions from '../actions'
+import * as Types from '../types'
+import Store from '../store'
 
 import {Input} from './Input'
 
 interface Props {}
 
-interface State {
-  username: string
-  password: string
-}
+interface State extends Types.UserLogin {}
 
 export class Register extends React.Component<Props, State> {
   public state = {
@@ -26,7 +26,8 @@ export class Register extends React.Component<Props, State> {
 
   private onSave = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
-    console.log(this.state)
+    const data: Types.UserLogin = this.state
+    Store.dispatch(Actions.userRegistrationStarted(data))
   }
 
   public render() {

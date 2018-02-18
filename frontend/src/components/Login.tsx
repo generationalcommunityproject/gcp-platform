@@ -3,6 +3,7 @@ import * as React from 'react'
 import * as Styles from '../styles'
 import * as Actions from '../actions'
 import * as Types from '../types'
+import * as Constants from '../constants'
 import Store from '../store'
 
 import {Input} from './Input'
@@ -25,7 +26,7 @@ export class Login extends React.Component<Props, State> {
     evt.preventDefault()
   }
 
-  private selectUser = (role: Types.Role) => () => {
+  private selectUser = (role: Constants.Role) => () => {
     Store.dispatch(Actions.routeLogin(role))
   }
 
@@ -34,13 +35,13 @@ export class Login extends React.Component<Props, State> {
       <div className={Styles.flexColumn}>
         <h2>Select a Demo User Role</h2>
         <i>For demonstration purposes only!</i>
-        <button onClick={this.selectUser(Types.Role.communityAdvocate)}>
+        <button onClick={this.selectUser(Constants.Role.communityAdvocate)}>
           Community Advocate
         </button>
-        <button onClick={this.selectUser(Types.Role.solutionProvider)}>
+        <button onClick={this.selectUser(Constants.Role.solutionProvider)}>
           Solution Provider
         </button>
-        <button onClick={this.selectUser(Types.Role.responsibleParty)}>
+        <button onClick={this.selectUser(Constants.Role.responsibleParty)}>
           Responsible Party
         </button>
         <form onSubmit={this.onLogin}>

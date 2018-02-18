@@ -1,4 +1,5 @@
 import * as Types from './types'
+import * as Constants from './constants'
 
 export const createProfile = (): Types.Profile => ({
   initialized: false,
@@ -6,5 +7,5 @@ export const createProfile = (): Types.Profile => ({
   address: null,
   username: '',
   community: '',
-  role: Types.Role.communityAdvocate, // Default
+  role: Constants.Role.communityAdvocate, // Default
 })

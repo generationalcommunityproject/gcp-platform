@@ -3,19 +3,20 @@ import {createBrowserHistory} from 'history'
 import * as querystring from 'querystring'
 
 import * as Types from './types'
+import * as Constants from './constants'
 
 const history = createBrowserHistory()
 
 const routesMap: Types.RoutesMap = {}
 
-routesMap[Types.Routes.HOME] = '/'
-routesMap[Types.Routes.COMMUNITIES] = '/communities'
+routesMap[Constants.Routes.HOME] = '/'
+routesMap[Constants.Routes.COMMUNITIES] = '/communities'
 // TODO communities/new
-routesMap[Types.Routes.ISSUES] = '/issues'
+routesMap[Constants.Routes.ISSUES] = '/issues'
 // TODO issue/new
-routesMap[Types.Routes.PROFILE] = '/profile'
-routesMap[Types.Routes.REGISTER] = '/register'
-routesMap[Types.Routes.LOGIN] = '/login'
+routesMap[Constants.Routes.PROFILE] = '/profile'
+routesMap[Constants.Routes.REGISTER] = '/register'
+routesMap[Constants.Routes.LOGIN] = '/login'
 
 export default router.connectRoutes(history, routesMap, {
   querySerializer: querystring,
