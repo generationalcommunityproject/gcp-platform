@@ -15,9 +15,13 @@ export interface Error {
 export type Address = string
 export type ID = string
 
-export interface UserLogin {
-  username: string
+export interface UserRegistration {
+  email: string
+  displayName: string
   password: string
+  community: string
+  about: string
+  role: Constants.Role
 }
 
 export interface Profile {

@@ -27,7 +27,6 @@ export const Input: React.SFC<Props> = props => (
         autoFocus={props.autoFocus}
       />
     </div>
-    <div className={Styles.formHelp}>{props.error}</div>
   </div>
 )
 

@@ -15,7 +15,7 @@ export const profile = reducerWithInitialState<Types.Profile>(
   .case(Actions.userLogout, state => Initializers.createProfile())
   .case(Actions.routeNotFound, state => Initializers.createProfile())
 
-export const route = reducerWithInitialState<Types.Route>(null)
+export const route = reducerWithInitialState<Types.Route>(Constants.Routes.HOME)
   .case(Actions.routeHome, () => Constants.Routes.HOME)
   .case(Actions.routeCommunities, () => Constants.Routes.COMMUNITIES)
   .case(Actions.routeIssues, () => Constants.Routes.ISSUES)

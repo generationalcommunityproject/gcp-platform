@@ -32,7 +32,7 @@ export const userRegistrationFailure = actionCreator<Types.Error>(
   Constants.Actions.USER_REGISTRATION_FAILURE
 )
 export const userRegistrationStarted = (
-  registration: Types.UserLogin
+  registration: Types.UserRegistration
 ) => async (dispatch): Promise<void> => {
   let res: Response
   try {

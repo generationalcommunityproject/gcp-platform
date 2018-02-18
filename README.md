@@ -106,6 +106,7 @@ Mission Statement:  The Generational Community Project engages the community’s
   git clone git@github.com:generationalcommunityproject/gcp-platform.git
   cd gcp-platform
   yarn install
-  yarn dev
-  open http://localhost:8080
+  yarn start
 ```
+
+And then, open your browser to: <http://localhost:8080>

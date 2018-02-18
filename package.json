@@ -7,7 +7,7 @@
   "scripts": {
     "install": "cd frontend && yarn && cd ../functions && yarn",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd frontend && yarn start",
+    "start": "cd frontend && yarn start",
     "deploy":
       "cd frontend && yarn build && mv ../public/static/index.html ../public && firebase deploy"
   },

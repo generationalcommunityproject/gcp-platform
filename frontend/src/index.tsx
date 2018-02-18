@@ -25,7 +25,7 @@ css.global('*', {
 css.global('html, body, #root', {
   width: '100%',
   height: '100%',
-  background: 'linear-gradient(45deg, #3a7bd5, #3a6073)',
+  background: 'linear-gradient(135deg, #3a7bd5, #3a6073)',
   color: '#fff',
   display: 'block',
   fontFamily: 'Roboto, sans-serif',

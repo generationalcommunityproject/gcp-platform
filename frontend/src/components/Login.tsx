@@ -35,15 +35,7 @@ export class Login extends React.Component<Props, State> {
       <div className={Styles.flexColumn}>
         <h2>Select a Demo User Role</h2>
         <i>For demonstration purposes only!</i>
-        <button onClick={this.selectUser(Constants.Role.communityAdvocate)}>
-          Community Advocate
-        </button>
-        <button onClick={this.selectUser(Constants.Role.solutionProvider)}>
-          Solution Provider
-        </button>
-        <button onClick={this.selectUser(Constants.Role.responsibleParty)}>
-          Responsible Party
-        </button>
+
         <form onSubmit={this.onLogin}>
           <Input
             name="username"
