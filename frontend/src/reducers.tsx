@@ -1,4 +1,7 @@
-import {reducerWithInitialState} from 'typescript-fsa-reducers'
+import {
+  reducerWithInitialState,
+  reducerWithoutInitialState,
+} from 'typescript-fsa-reducers'
 
 import * as Actions from './actions'
 import * as Types from './types'
@@ -18,8 +21,14 @@ export const profile = reducerWithInitialState<Types.Profile>(
 export const route = reducerWithInitialState<Types.Route>(Constants.Routes.HOME)
   .case(Actions.routeHome, () => Constants.Routes.HOME)
   .case(Actions.routeCommunities, () => Constants.Routes.COMMUNITIES)
+  .case(Actions.routeCommunity, () => Constants.Routes.COMMUNITY)
   .case(Actions.routeIssues, () => Constants.Routes.ISSUES)
+  .case(Actions.routeIssue, () => Constants.Routes.ISSUE)
   .case(Actions.routeProfile, () => Constants.Routes.PROFILE)
   .case(Actions.routeLogin, () => Constants.Routes.LOGIN)
   .case(Actions.routeRegister, () => Constants.Routes.REGISTER)
   .case(Actions.routeNotFound, () => Constants.Routes.NOTFOUND)
+
+// export const community = reducerWithoutInitialState<Types.Community>()
+//   .case(Actions.setCommunity, (state, action) => ({}))
+// TODO

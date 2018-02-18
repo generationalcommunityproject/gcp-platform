@@ -14,6 +14,10 @@
         "function": "register"
       },
       {
+        "source": "/api/communities",
+        "function": "communities"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

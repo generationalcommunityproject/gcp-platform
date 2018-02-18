@@ -2,10 +2,6 @@ import * as Constants from './constants'
 
 export type Route = Constants.Routes | null
 
-export interface RoutesMap {
-  [key: string]: string
-}
-
 export interface Error {
   type: string
   code: number

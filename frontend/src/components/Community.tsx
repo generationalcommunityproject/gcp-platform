@@ -6,7 +6,7 @@ import * as Styles from '../styles'
 import * as Constants from '../constants'
 
 interface Props {
-  communities: Types.Community[]
+  community: Types.Community
 }
 
 export class Communities extends React.Component<Props> {

@@ -56,3 +56,13 @@ export const formError = cssstr({
   border: '1px solid #f00',
   padding: '5px',
 })
+
+export const button = cssstr({
+  border: '1px solid #fff',
+  fontSize: '18px',
+  background: 'transparent',
+  color: '#fff',
+  borderRadius: '2px',
+  padding: '5px',
+  margin: '5px',
+})

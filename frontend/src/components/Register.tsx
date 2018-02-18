@@ -82,17 +82,26 @@ export class Register extends React.Component<Props, State> {
           />
           <div>What is your role within this community?</div>
           <div>
-            <button onClick={this.setRole(Constants.Role.communityAdvocate)}>
+            <button
+              className={Styles.button}
+              onClick={this.setRole(Constants.Role.communityAdvocate)}
+            >
               Community Advocate
             </button>
-            <button onClick={this.setRole(Constants.Role.solutionProvider)}>
+            <button
+              className={Styles.button}
+              onClick={this.setRole(Constants.Role.solutionProvider)}
+            >
               Solution Provider
             </button>
-            <button onClick={this.setRole(Constants.Role.responsibleParty)}>
+            <button
+              className={Styles.button}
+              onClick={this.setRole(Constants.Role.responsibleParty)}
+            >
               Responsible Party
             </button>
           </div>
-          <input type="submit" value="Register" />
+          <input className={Styles.button} type="submit" value="Register" />
         </form>
       </div>
     )
